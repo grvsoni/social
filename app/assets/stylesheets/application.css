@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.clear{
+	clear: both;
+}
+
+ /* from: http://css.dzone.com/news/css-message-boxes-different-me */
+
+.info, .notice, .success, .warning, .error, .validation, .errorExplanation {
+  border: 1px solid;
+  margin: 10px 0px;
+  padding: 10px 10px 10px 34px;
+  width: 600px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.info {
+  color: #00529B;
+  background-color: #BDE5F8;
+  background-image: url(/images/icons/information.png);
+}
+
+.notice {
+  color: #514721;
+  background-color: #FFF6BF;
+  background-image: url(/images/icons/cog.png);
+}
+
+.success {
+  color: #308A20;
+  background-color: #DFF2BF;
+  background-image: url(/images/icons/accept.png);
+}
+
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+  background-image: url(/images/icons/error.png);
+}
+
+.error, .errorExplanation {
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url(/images/icons/exclamation.png);
+}
+
+.field_with_errors {
+  color: #B94A48;
+  display: inline;
+}

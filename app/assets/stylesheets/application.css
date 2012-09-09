@@ -11,8 +11,22 @@
  *= require_self
  *= require_tree .
  */
+body {
+  width: 1170px !important;
+  margin: 0px auto !important;
+  padding:10px !important;
+}
+
 .clear{
 	clear: both;
+}
+
+.right{
+  float: right;
+}
+
+.left{
+  float: left;
 }
 
  /* from: http://css.dzone.com/news/css-message-boxes-different-me */

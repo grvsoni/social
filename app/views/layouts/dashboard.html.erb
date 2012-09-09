@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Store</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div>
+    <span class="left">
+      <img src="/assets/logo.jpeg">
+    </span>
+    <span class="right">
+      <div class="btn-group">
+        Hi <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><%= current_user.fullname %> <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Profile", edit_user_registration_url %></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><%= access_link(current_user) %></li>
+        </ul>
+      </div>
+
+      </span>
+  </div>
+  <div class="clear"></div>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <%= tabs_tag(:builder => MenuTabBuilder, :open_tabs => { :id => "tabs", :class => "nav" }) do |tab| %>
+        <%= tab.home      'Home', root_path %>
+        <%= tab.dashboard 'Dashboard', "/dashboard" %>
+        <%= tab.account   'My Account', edit_user_registration_path %>
+      <% end %>
+    </div>
+  </div>
+  <div class="container">
+    <% if flash[:error] %>
+      <div class="alert alert-error"><%= flash[:error].html_safe %></div>
+    <% end %>
+    <% if flash[:success] %>
+      <div class="alert alert-success"><%= flash[:success].html_safe %></div>
+    <% end %>
+    <% if flash[:warning] %>
+      <div class="alert alert-block"><%= flash[:warning].html_safe %></div>
+    <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info"><%= flash[:notice].html_safe %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+</body>
+</html>

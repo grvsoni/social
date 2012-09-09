@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   validates :first_name, :last_name, :presence => true 
 
+  def fullname
+  	[first_name,last_name].join(" ")
+  end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
 	  user = User.where(:provider => auth.provider, :uid => auth.uid).first

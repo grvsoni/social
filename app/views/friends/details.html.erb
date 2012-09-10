@@ -1,0 +1,16 @@
+<div class="span2">
+  <img src="<%= @graph.get_picture(@friend["id"],{:type => "large"})%>" class="thumbnail"/>
+</div>
+<div class="span6 thumbnail">
+  <% @friend.each do |attr, value| %>
+  	<span class="span1"><strong><%= attr %></strong></span>
+  	<span class="span4"><%= value %></span>
+  	<div class="clear"></div>
+  <% end %>
+</div>
+<div class="span3">
+<form action="/friends/post_message/<%= @friend["id"] %>" method="post">
+  <textarea name="message"></textarea>
+  <input type="submit" value="Post a message" class="btn btn-primary"/>
+</form>
+</div>

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :gender, :provider, :uid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :gender, :provider, :uid, :fb_access_token
   # attr_accessible :title, :body
   validates :first_name, :last_name, :presence => true 
 
@@ -14,7 +14,10 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-	  user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    access_token = auth.credentials.token
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    p ">>>>>>>>>>>>>>>>>>>"
+    p auth.inspect
 	  unless user
 	  	user = User.where(:email => auth.info.email).first
 	  	if user
@@ -33,6 +36,7 @@ class User < ActiveRecord::Base
 	                         )
 	    end
 	  end
+    user.update_attribute("fb_access_token", access_token)
 	  user
   end
 

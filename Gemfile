@@ -27,6 +27,7 @@ gem 'rspec-rails', '2.11.0'
 gem 'oauth2'
 gem "omniauth-facebook"
 gem 'tabs_on_rails', '2.1.1'
+gem 'koala'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -10,7 +10,7 @@ module ApplicationHelper
 		if current_user
 			current_user.email 
 		else
-			"Friends"
+			"Friend"
 		end
 	end
 end

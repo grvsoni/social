@@ -1,2 +1,2 @@
-Hello <%= acknowledge(current_user) %>!!
-<%= access_link(current_user) %> | <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<span class="left">Hello <%= acknowledge(current_user) %>!!</span>
+<span class="right"><%= access_link(current_user) %> | <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></span>

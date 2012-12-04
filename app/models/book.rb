@@ -6,5 +6,6 @@ class Book < ActiveRecord::Base
   end
 
   def method2
+  	puts "3"
   end
 end

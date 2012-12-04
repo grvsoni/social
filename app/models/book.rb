@@ -4,4 +4,7 @@ class Book < ActiveRecord::Base
   def method1
   	puts "1"
   end
+
+  def method2
+  end
 end

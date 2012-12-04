@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     access_token = auth.credentials.token
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    puts "change 3"
-    unless user
+    puts "change 1"
+	  unless user
 	  	user = User.where(:email => auth.info.email).first
 	  	if user
 	  		user.provider = auth.provider

@@ -17,8 +17,7 @@ class User < ActiveRecord::Base
     access_token = auth.credentials.token
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     puts "change 3"
-    puts "change 2"
-	  unless user
+    unless user
 	  	user = User.where(:email => auth.info.email).first
 	  	if user
 	  		user.provider = auth.provider

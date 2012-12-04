@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
     access_token = auth.credentials.token
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     p ">>>>>>>>>>>>>>>>>>>"
+    p auth.inspect
 	  unless user
 	  	user = User.where(:email => auth.info.email).first
 	  	if user

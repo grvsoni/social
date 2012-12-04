@@ -7,5 +7,5 @@ class Book < ActiveRecord::Base
 
   def method2
   	puts "3"
-  end
+  end  
 end

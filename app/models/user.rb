@@ -50,4 +50,8 @@ class User < ActiveRecord::Base
   def method1
     puts "hello"
   end
+  
+  def method2
+    puts "conflict"
+  end
 end

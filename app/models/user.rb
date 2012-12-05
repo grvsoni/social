@@ -46,4 +46,8 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def method2
+    puts "conflict"
+  end
 end

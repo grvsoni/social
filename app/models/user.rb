@@ -46,4 +46,8 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def method1
+    puts "hello"
+  end
 end
